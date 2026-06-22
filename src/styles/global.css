@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Scheherazade+New:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  body {
+    @apply m-0 bg-paper text-black antialiased;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  button,
+  input,
+  select {
+    font: inherit;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .app-shell {
+    @apply min-h-screen bg-paper;
+  }
+
+  .topbar {
+    @apply sticky top-0 z-30 flex h-20 items-center gap-4 border-b border-secondary/80 bg-paper px-5 shadow-sm;
+  }
+
+  .logo-button {
+    @apply shrink-0 border-0 bg-transparent p-0;
+  }
+
+  .app-logo {
+    @apply h-12 w-auto object-contain;
+  }
+
+  .nav-list {
+    @apply flex min-w-0 flex-1 items-center justify-between gap-2;
+  }
+
+  .nav-item {
+    @apply border-0 bg-transparent px-2 py-2 text-center text-[15px] font-semibold leading-tight text-black/80 underline-offset-8 transition hover:text-primary;
+  }
+
+  .nav-item.active {
+    @apply text-primary underline decoration-primary decoration-2;
+  }
+
+  .top-actions {
+    @apply flex shrink-0 items-center gap-3;
+  }
+
+  .button {
+    @apply inline-flex min-h-11 items-center justify-center rounded-xl border px-5 py-2 text-base font-semibold transition disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .button-primary {
+    @apply border-primary bg-primary text-white hover:bg-primary/90;
+  }
+
+  .button-ghost {
+    @apply border-secondary bg-white text-primary hover:border-primary;
+  }
+
+  .icon-button {
+    @apply grid h-11 w-11 place-items-center rounded-full border border-secondary bg-paper text-primary hover:bg-white;
+  }
+
+  .language-menu {
+    @apply flex h-11 items-center gap-2 rounded-xl border border-secondary bg-white px-3 text-primary;
+  }
+
+  .language-menu select {
+    @apply border-0 bg-transparent outline-none;
+  }
+
+  .top-search {
+    @apply flex h-11 w-[min(340px,25vw)] items-center gap-2 rounded-full bg-white px-4 text-hint shadow-sm;
+  }
+
+  .top-search input {
+    @apply min-w-0 flex-1 border-0 bg-transparent outline-none;
+  }
+
+  .page-main {
+    @apply min-h-[calc(100vh-5rem)];
+  }
+
+  .reader-main {
+    @apply h-[calc(100vh-5rem)] overflow-hidden;
+  }
+
+  .home-hero {
+    @apply flex h-56 items-center justify-center bg-cover bg-center;
+    background-image: url('/assets/png/mainSearchBackground.png');
+  }
+
+  .home-hero img {
+    @apply max-h-44 max-w-[80%] object-contain;
+  }
+
+  .home-grid {
+    @apply grid grid-cols-1 gap-5 p-6 md:grid-cols-2 xl:grid-cols-3;
+  }
+
+  .home-card {
+    @apply flex h-60 flex-col items-center justify-center gap-5 rounded-lg border border-secondary bg-white p-7 text-center text-2xl font-semibold text-black shadow-soft transition hover:-translate-y-1 hover:border-primary;
+  }
+
+  .home-card img {
+    @apply h-14 w-14 object-contain;
+  }
+
+  .auth-page {
+    @apply flex min-h-screen bg-mainBack p-10;
+  }
+
+  .auth-panel {
+    @apply flex w-full max-w-[560px] flex-col gap-8 px-10 py-8;
+  }
+
+  .auth-logo {
+    @apply mx-auto w-full max-w-sm object-contain;
+  }
+
+  .auth-panel h1 {
+    @apply mb-2 text-4xl font-normal;
+  }
+
+  .auth-panel p {
+    @apply m-0 text-3xl;
+  }
+
+  .auth-panel input,
+  .password-field {
+    @apply h-16 w-full rounded-2xl border border-secondary bg-white px-5 text-xl outline-none focus:border-primary;
+  }
+
+  .password-field {
+    @apply flex items-center gap-3 p-0 pl-5;
+  }
+
+  .password-field input {
+    @apply h-full flex-1 border-0 bg-transparent px-0;
+  }
+
+  .password-field button {
+    @apply grid h-full w-14 place-items-center border-0 bg-transparent text-hint;
+  }
+
+  .wide-button {
+    @apply h-16 w-full text-xl;
+  }
+
+  .auth-art {
+    @apply hidden flex-1 flex-col gap-8 lg:flex;
+  }
+
+  .skip-button {
+    @apply ml-auto rounded-xl border-0 bg-primary px-5 py-3 text-white;
+  }
+
+  .book-cover {
+    @apply flex-1 rounded-[30px] bg-cover bg-center;
+    background-image: url('/assets/png/loginBook.png');
+  }
+
+  .back-button {
+    @apply mb-8 inline-flex items-center gap-2 rounded-full border border-secondary bg-white px-4 py-2 text-primary hover:border-primary;
+  }
+
+  .section-heading {
+    @apply mb-7;
+  }
+
+  .section-heading h1 {
+    @apply m-0 text-4xl font-semibold;
+  }
+
+  .library-page,
+  .about-page,
+  .premium-page {
+    @apply p-10;
+  }
+
+  .library-layout {
+    @apply grid min-h-[65vh] grid-cols-[320px_minmax(0,1fr)] overflow-hidden rounded-lg border border-secondary bg-white;
+  }
+
+  .library-list {
+    @apply flex max-h-[75vh] flex-col overflow-auto border-r border-secondary bg-paper;
+  }
+
+  .library-list button,
+  .reader-menu button {
+    @apply border-0 border-b border-secondary/70 bg-transparent px-5 py-4 text-left text-lg hover:bg-white;
+  }
+
+  .library-list button.active,
+  .reader-menu button.active {
+    @apply bg-white text-primary;
+  }
+
+  .library-detail {
+    @apply max-h-[75vh] overflow-auto p-8 text-xl leading-8;
+  }
+
+  .library-detail h2 {
+    @apply mt-0 text-3xl;
+  }
+
+  .quran-page {
+    @apply grid h-full grid-cols-[330px_minmax(0,1fr)] bg-white;
+  }
+
+  .reader-sidebar {
+    @apply h-full overflow-auto border-r border-secondary bg-white p-5;
+  }
+
+  .segmented {
+    @apply mb-6 grid grid-cols-2 rounded-full bg-paper p-1;
+  }
+
+  .segmented button {
+    @apply flex items-center justify-center gap-2 rounded-full border-0 bg-transparent px-4 py-2 text-base text-hint;
+  }
+
+  .segmented button.active {
+    @apply bg-white text-primary shadow-sm;
+  }
+
+  .segmented.compact {
+    @apply mb-0 flex w-fit;
+  }
+
+  .reader-menu {
+    @apply flex flex-col;
+  }
+
+  .reader-menu button {
+    @apply flex items-center gap-3;
+  }
+
+  .reader-menu span {
+    @apply grid h-8 w-8 place-items-center rounded-full bg-paper text-sm text-primary;
+  }
+
+  .reader-content {
+    @apply relative h-full overflow-auto bg-white;
+  }
+
+  .search-panel {
+    @apply sticky top-0 z-20 flex items-start justify-between gap-4 border-b border-secondary bg-paper/95 p-4 backdrop-blur;
+  }
+
+  .search-results {
+    @apply flex max-w-xl flex-wrap gap-2;
+  }
+
+  .search-results button {
+    @apply inline-flex items-center gap-2 rounded-full border border-secondary bg-white px-3 py-2 text-sm text-black hover:border-primary;
+  }
+
+  .clear-search {
+    @apply text-primary;
+  }
+
+  .chapter-paper {
+    @apply mx-auto max-w-5xl px-8 py-10;
+  }
+
+  .chapter-head {
+    @apply mb-8 border-b border-secondary pb-8 text-center;
+  }
+
+  .chapter-head h1 {
+    @apply m-0 text-5xl font-semibold text-primary;
+  }
+
+  .chapter-head p {
+    @apply text-lg text-hint;
+  }
+
+  .verse-row {
+    @apply grid grid-cols-[72px_minmax(0,1fr)] gap-5 border-b border-secondary/70 py-7;
+  }
+
+  .verse-number {
+    @apply flex h-fit flex-col items-center gap-2 border-0 bg-transparent text-primary;
+  }
+
+  .verse-number span {
+    @apply grid h-10 w-10 place-items-center bg-contain bg-center bg-no-repeat text-sm text-black;
+    background-image: url('/assets/png/juzComponent.png');
+  }
+
+  .arabic-text {
+    @apply m-0 text-right font-arabic text-4xl leading-[2.3];
+  }
+
+  .translation-text,
+  .tafsir-text {
+    @apply text-xl leading-9;
+  }
+
+  .tafsir-text {
+    @apply mt-6 rounded-lg bg-paper p-5;
+  }
+
+  .premium-card {
+    @apply mx-auto flex max-w-5xl flex-col items-center gap-7;
+  }
+
+  .premium-banner {
+    @apply flex h-56 w-full items-center justify-center bg-cover bg-center;
+    background-image: url('/assets/png/premiumBackground.png');
+  }
+
+  .premium-banner h1 {
+    @apply text-5xl font-semibold text-primary;
+  }
+
+  .premium-copy {
+    @apply whitespace-pre-line text-center text-3xl leading-normal;
+  }
+
+  .premium-list {
+    @apply grid gap-3 text-xl;
+  }
+
+  .premium-list li {
+    @apply flex items-center gap-3 text-primary;
+  }
+
+  .payment-row {
+    @apply flex flex-wrap items-center justify-center gap-5 text-2xl;
+  }
+
+  .payment-card {
+    @apply h-20 w-36 rounded-xl border border-transparent bg-white p-3;
+  }
+
+  .payment-card.active {
+    @apply border-primary;
+  }
+
+  .payment-card img {
+    @apply h-full w-full object-contain;
+  }
+
+  .buy-button {
+    @apply h-16 w-full max-w-md text-xl;
+  }
+
+  .loading,
+  .state-box,
+  .empty-reader {
+    @apply flex min-h-40 flex-col items-center justify-center gap-4 text-xl text-hint;
+  }
+
+  .loading span {
+    @apply h-8 w-8 animate-spin rounded-full border-4 border-secondary border-t-primary;
+  }
+
+  .muted {
+    @apply p-5 text-hint;
+  }
+}
+
+@media (max-width: 900px) {
+  .topbar {
+    @apply static h-auto flex-wrap;
+  }
+
+  .nav-list {
+    @apply order-3 w-full overflow-x-auto justify-start;
+  }
+
+  .home-grid,
+  .library-layout,
+  .quran-page {
+    @apply grid-cols-1;
+  }
+
+  .reader-main {
+    @apply h-auto overflow-visible;
+  }
+
+  .reader-sidebar,
+  .reader-content {
+    @apply h-auto max-h-none;
+  }
+
+  .auth-page {
+    @apply p-4;
+  }
+
+  .auth-panel {
+    @apply px-2;
+  }
+}
