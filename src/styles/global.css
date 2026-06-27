@@ -385,17 +385,121 @@
 
 @media (max-width: 900px) {
   .topbar {
-    @apply static h-auto flex-wrap;
+    @apply static h-auto flex-wrap items-center gap-3 px-3 py-3;
+  }
+
+  .logo-button {
+    @apply order-1;
+  }
+
+  .app-logo {
+    @apply h-9;
   }
 
   .nav-list {
-    @apply order-3 w-full overflow-x-auto justify-start;
+    @apply order-3 -mx-3 w-[calc(100%+1.5rem)] justify-start gap-1 overflow-x-auto px-3 pb-1;
+    scrollbar-width: none;
+  }
+
+  .nav-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-item {
+    @apply shrink-0 whitespace-nowrap px-3 py-2 text-sm;
+  }
+
+  .top-actions {
+    @apply order-2 ml-auto flex-wrap justify-end;
+  }
+
+  .top-search {
+    @apply order-2 ml-auto w-[min(360px,55vw)];
+  }
+
+  .button {
+    @apply min-h-10 px-3 text-sm;
+  }
+
+  .language-menu {
+    @apply h-10;
   }
 
   .home-grid,
   .library-layout,
   .quran-page {
     @apply grid-cols-1;
+  }
+
+  .home-hero {
+    @apply h-28;
+  }
+
+  .home-hero img {
+    @apply max-h-20;
+  }
+
+  .home-grid {
+    @apply gap-3 p-3;
+  }
+
+  .home-card {
+    @apply h-40 rounded-lg p-4 text-xl;
+  }
+
+  .home-card-art {
+    @apply h-14;
+  }
+
+  .home-card-art img {
+    @apply max-h-14 max-w-14;
+  }
+
+  .home-card-book {
+    @apply h-10 w-10;
+  }
+
+  .library-page,
+  .about-page,
+  .premium-page {
+    @apply p-4;
+  }
+
+  .section-heading {
+    @apply mb-4;
+  }
+
+  .section-heading h1 {
+    @apply text-2xl leading-tight;
+  }
+
+  .back-button {
+    @apply mb-4;
+  }
+
+  .library-layout {
+    @apply min-h-0 overflow-visible;
+  }
+
+  .library-list {
+    @apply max-h-none flex-row overflow-x-auto border-b border-r-0 bg-white;
+    scrollbar-width: none;
+  }
+
+  .library-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .library-list button {
+    @apply min-w-max shrink-0 border-b-0 border-r px-4 py-3 text-sm;
+  }
+
+  .library-detail {
+    @apply max-h-none min-h-64 p-4 text-sm leading-7;
+  }
+
+  .library-detail h2 {
+    @apply text-xl;
   }
 
   .reader-main {
@@ -407,11 +511,225 @@
     @apply h-auto max-h-none;
   }
 
+  .quran-page {
+    @apply min-h-[calc(100vh-4rem)];
+  }
+
+  .reader-sidebar {
+    @apply border-b border-r-0 p-3;
+  }
+
+  .segmented {
+    @apply mb-3;
+  }
+
+  .reader-menu {
+    @apply flex-row gap-2 overflow-x-auto pb-1;
+    scrollbar-width: none;
+  }
+
+  .reader-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .reader-menu button {
+    @apply min-w-max shrink-0 rounded-full border border-secondary bg-paper px-3 py-2 text-sm;
+  }
+
+  .reader-menu button.active {
+    @apply bg-white;
+  }
+
+  .search-panel {
+    @apply static flex-col p-3;
+  }
+
+  .search-results {
+    @apply max-w-none;
+  }
+
+  .chapter-paper {
+    @apply max-w-none px-4 py-5;
+  }
+
+  .chapter-head {
+    @apply mb-4 pb-4;
+  }
+
+  .chapter-head h1 {
+    @apply text-3xl;
+  }
+
+  .verse-row {
+    @apply grid-cols-[44px_minmax(0,1fr)] gap-3 py-4;
+  }
+
+  .arabic-text {
+    @apply text-2xl leading-[2];
+  }
+
+  .translation-text,
+  .tafsir-text {
+    @apply text-sm leading-7;
+  }
+
+  .tafsir-text {
+    @apply mt-4 p-4;
+  }
+
   .auth-page {
     @apply p-4;
   }
 
   .auth-panel {
     @apply px-2;
+  }
+
+  .auth-art {
+    @apply hidden;
+  }
+
+  .premium-card {
+    @apply max-w-none gap-4;
+  }
+
+  .premium-banner {
+    @apply h-32;
+  }
+
+  .premium-banner h1 {
+    @apply text-3xl;
+  }
+
+  .premium-copy {
+    @apply text-lg;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    @apply gap-2 px-3 py-2;
+  }
+
+  .app-logo {
+    @apply h-8;
+  }
+
+  .top-actions {
+    @apply w-[calc(100%-3rem)] flex-nowrap;
+  }
+
+  .top-actions .button {
+    @apply min-w-0 flex-1 px-2 text-xs;
+  }
+
+  .language-menu {
+    @apply shrink-0 px-2;
+  }
+
+  .top-search {
+    @apply w-[calc(100%-3rem)] px-3;
+  }
+
+  .nav-item {
+    @apply text-xs;
+  }
+
+  .home-hero {
+    @apply h-24;
+  }
+
+  .home-grid {
+    @apply grid-cols-1 gap-3 p-3;
+  }
+
+  .home-card {
+    @apply h-32 p-4 text-lg;
+  }
+
+  .home-card-art {
+    @apply h-12;
+  }
+
+  .home-card-art img {
+    @apply max-h-12 max-w-12;
+  }
+
+  .home-card-book {
+    @apply h-8 w-8;
+  }
+
+  .library-page,
+  .about-page,
+  .premium-page {
+    @apply p-3;
+  }
+
+  .section-heading h1 {
+    @apply text-xl;
+  }
+
+  .library-detail {
+    @apply p-3;
+  }
+
+  .quran-page {
+    @apply min-h-[calc(100vh-6.75rem)];
+  }
+
+  .reader-sidebar {
+    @apply p-3;
+  }
+
+  .segmented button {
+    @apply px-2 text-xs;
+  }
+
+  .chapter-paper {
+    @apply px-3 py-4;
+  }
+
+  .chapter-head h1 {
+    @apply text-2xl;
+  }
+
+  .chapter-head p {
+    @apply text-sm;
+  }
+
+  .verse-row {
+    @apply grid-cols-[36px_minmax(0,1fr)] gap-2 py-4;
+  }
+
+  .verse-number span {
+    @apply h-7 w-7 text-[11px];
+  }
+
+  .arabic-text {
+    @apply text-[26px] leading-[2];
+  }
+
+  .auth-page {
+    @apply p-3;
+  }
+
+  .auth-panel {
+    @apply max-w-none gap-4 p-0;
+  }
+
+  .auth-panel h1 {
+    @apply text-2xl;
+  }
+
+  .auth-panel p {
+    @apply text-base;
+  }
+
+  .payment-row {
+    @apply gap-3 text-base;
+  }
+
+  .payment-card {
+    @apply h-14 w-24;
   }
 }
