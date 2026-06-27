@@ -31,7 +31,7 @@
   }
 
   .topbar {
-    @apply sticky top-0 z-30 flex h-20 items-center gap-4 border-b border-secondary/80 bg-white px-5 shadow-sm;
+    @apply sticky top-0 z-30 flex h-16 items-center gap-3 border-b border-secondary/80 bg-white px-4 shadow-sm;
   }
 
   .logo-button {
@@ -39,15 +39,15 @@
   }
 
   .app-logo {
-    @apply h-14 w-auto object-contain;
+    @apply h-10 w-auto object-contain;
   }
 
   .nav-list {
-    @apply flex min-w-0 flex-1 items-center justify-between gap-2;
+    @apply flex min-w-0 flex-1 items-center justify-between gap-1;
   }
 
   .nav-item {
-    @apply border-0 bg-transparent px-2 py-2 text-center text-[15px] font-semibold leading-tight text-black/80 transition hover:text-primary;
+    @apply border-0 bg-transparent px-2 py-1.5 text-center text-sm font-semibold leading-tight text-black/80 transition hover:text-primary;
   }
 
   .nav-item.active {
@@ -55,11 +55,11 @@
   }
 
   .top-actions {
-    @apply flex shrink-0 items-center gap-3;
+    @apply flex shrink-0 items-center gap-2;
   }
 
   .button {
-    @apply inline-flex min-h-11 items-center justify-center rounded-xl border px-5 py-2 text-base font-semibold transition disabled:cursor-not-allowed disabled:opacity-60;
+    @apply inline-flex min-h-10 items-center justify-center rounded-lg border px-4 py-2 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-60;
   }
 
   .button-primary {
@@ -71,11 +71,11 @@
   }
 
   .icon-button {
-    @apply grid h-11 w-11 place-items-center rounded-full border border-secondary bg-paper text-primary hover:bg-white;
+    @apply grid h-10 w-10 place-items-center rounded-full border border-secondary bg-paper text-primary hover:bg-white;
   }
 
   .language-menu {
-    @apply flex h-11 items-center gap-2 rounded-xl border border-secondary bg-white px-3 text-primary;
+    @apply flex h-10 items-center gap-2 rounded-lg border border-secondary bg-white px-3 text-sm text-primary;
   }
 
   .language-menu select {
@@ -83,7 +83,7 @@
   }
 
   .top-search {
-    @apply flex h-11 w-[min(340px,25vw)] items-center gap-2 rounded-full bg-white px-4 text-hint shadow-sm;
+    @apply flex h-10 w-[min(300px,24vw)] items-center gap-2 rounded-full bg-white px-4 text-sm text-hint shadow-sm;
   }
 
   .top-search input {
@@ -91,65 +91,65 @@
   }
 
   .page-main {
-    @apply min-h-[calc(100vh-5rem)];
+    @apply min-h-[calc(100vh-4rem)];
   }
 
   .reader-main {
-    @apply h-[calc(100vh-5rem)] overflow-hidden;
+    @apply h-[calc(100vh-4rem)] overflow-hidden;
   }
 
   .home-hero {
-    @apply flex h-56 items-center justify-center bg-cover bg-center;
+    @apply flex h-36 items-center justify-center bg-cover bg-center;
     background-image: url('/assets/flet/searchbg.png');
   }
 
   .home-hero img {
-    @apply max-h-48 max-w-[80%] object-contain;
+    @apply max-h-28 max-w-[70%] object-contain;
   }
 
   .home-grid {
-    @apply grid grid-cols-1 gap-5 p-5 md:grid-cols-2 xl:grid-cols-3;
+    @apply grid grid-cols-1 gap-4 p-4 md:grid-cols-2 xl:grid-cols-3;
   }
 
   .home-card {
-    @apply flex h-[300px] flex-col items-stretch justify-between rounded-[20px] border border-primary bg-primary p-8 text-left text-3xl font-semibold text-white shadow-soft transition hover:-translate-y-1 hover:bg-primary/95;
+    @apply flex h-[220px] flex-col items-stretch justify-between rounded-xl border border-primary bg-primary p-6 text-left text-2xl font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-primary/95;
   }
 
   .home-card-art {
-    @apply flex h-28 items-start justify-between gap-5;
+    @apply flex h-20 items-start justify-between gap-4;
   }
 
   .home-card-art img {
-    @apply max-h-28 max-w-28 object-contain;
+    @apply max-h-20 max-w-20 object-contain;
   }
 
   .home-card-book {
-    @apply mt-0 h-16 w-16;
+    @apply mt-0 h-12 w-12;
   }
 
   .auth-page {
-    @apply flex min-h-screen bg-mainBack p-10;
+    @apply flex min-h-screen bg-mainBack p-6;
   }
 
   .auth-panel {
-    @apply flex w-full max-w-[560px] flex-col gap-8 px-10 py-8;
+    @apply flex w-full max-w-[480px] flex-col gap-5 px-6 py-6;
   }
 
   .auth-logo {
-    @apply mx-auto w-full max-w-sm object-contain;
+    @apply mx-auto w-full max-w-xs object-contain;
   }
 
   .auth-panel h1 {
-    @apply mb-2 text-4xl font-normal;
+    @apply mb-2 text-3xl font-semibold;
   }
 
   .auth-panel p {
-    @apply m-0 text-3xl;
+    @apply m-0 text-lg;
   }
 
   .auth-panel input,
   .password-field {
-    @apply h-16 w-full rounded-2xl border border-secondary bg-white px-5 text-xl outline-none focus:border-primary;
+    @apply h-12 w-full rounded-xl border border-secondary bg-white px-4 text-base outline-none focus:border-primary;
   }
 
   .password-field {
@@ -165,7 +165,7 @@
   }
 
   .wide-button {
-    @apply h-16 w-full text-xl;
+    @apply h-12 w-full text-base;
   }
 
   .auth-art {
@@ -182,25 +182,25 @@
   }
 
   .back-button {
-    @apply mb-8 inline-flex items-center gap-2 rounded-full border border-secondary bg-white px-4 py-2 text-primary hover:border-primary;
+    @apply mb-6 inline-flex items-center gap-2 rounded-full border border-secondary bg-white px-4 py-2 text-sm text-primary hover:border-primary;
   }
 
   .section-heading {
-    @apply mb-7;
+    @apply mb-5;
   }
 
   .section-heading h1 {
-    @apply m-0 text-4xl font-semibold;
+    @apply m-0 text-3xl font-semibold;
   }
 
   .library-page,
   .about-page,
   .premium-page {
-    @apply p-10;
+    @apply p-6;
   }
 
   .library-layout {
-    @apply grid min-h-[65vh] grid-cols-[320px_minmax(0,1fr)] overflow-hidden rounded-lg border border-secondary bg-white;
+    @apply grid min-h-[62vh] grid-cols-[280px_minmax(0,1fr)] overflow-hidden rounded-lg border border-secondary bg-white;
   }
 
   .library-list {
@@ -209,7 +209,7 @@
 
   .library-list button,
   .reader-menu button {
-    @apply border-0 border-b border-secondary/70 bg-transparent px-5 py-4 text-left text-lg hover:bg-white;
+    @apply border-0 border-b border-secondary/70 bg-transparent px-4 py-3 text-left text-base hover:bg-white;
   }
 
   .library-list button.active,
@@ -218,27 +218,27 @@
   }
 
   .library-detail {
-    @apply max-h-[75vh] overflow-auto p-8 text-xl leading-8;
+    @apply max-h-[75vh] overflow-auto p-6 text-base leading-7;
   }
 
   .library-detail h2 {
-    @apply mt-0 text-3xl;
+    @apply mt-0 text-2xl;
   }
 
   .quran-page {
-    @apply grid h-full grid-cols-[330px_minmax(0,1fr)] bg-white;
+    @apply grid h-full grid-cols-[300px_minmax(0,1fr)] bg-white;
   }
 
   .reader-sidebar {
-    @apply h-full overflow-auto border-r border-secondary bg-white p-5;
+    @apply h-full overflow-auto border-r border-secondary bg-white p-4;
   }
 
   .segmented {
-    @apply mb-6 grid grid-cols-2 rounded-full bg-paper p-1;
+    @apply mb-5 grid grid-cols-2 rounded-full bg-paper p-1;
   }
 
   .segmented button {
-    @apply flex items-center justify-center gap-2 rounded-full border-0 bg-transparent px-4 py-2 text-base text-hint;
+    @apply flex items-center justify-center gap-2 rounded-full border-0 bg-transparent px-3 py-2 text-sm text-hint;
   }
 
   .segmented button.active {
@@ -258,7 +258,7 @@
   }
 
   .reader-menu span {
-    @apply grid h-8 w-8 place-items-center rounded-full bg-paper text-sm text-primary;
+    @apply grid h-7 w-7 place-items-center rounded-full bg-paper text-xs text-primary;
   }
 
   .reader-content {
@@ -266,7 +266,7 @@
   }
 
   .search-panel {
-    @apply sticky top-0 z-20 flex items-start justify-between gap-4 border-b border-secondary bg-paper/95 p-4 backdrop-blur;
+    @apply sticky top-0 z-20 flex items-start justify-between gap-3 border-b border-secondary bg-paper/95 p-3 backdrop-blur;
   }
 
   .search-results {
@@ -282,23 +282,23 @@
   }
 
   .chapter-paper {
-    @apply mx-auto max-w-5xl px-8 py-10;
+    @apply mx-auto max-w-4xl px-6 py-8;
   }
 
   .chapter-head {
-    @apply mb-8 border-b border-secondary pb-8 text-center;
+    @apply mb-6 border-b border-secondary pb-6 text-center;
   }
 
   .chapter-head h1 {
-    @apply m-0 text-5xl font-semibold text-primary;
+    @apply m-0 text-4xl font-semibold text-primary;
   }
 
   .chapter-head p {
-    @apply text-lg text-hint;
+    @apply text-base text-hint;
   }
 
   .verse-row {
-    @apply grid grid-cols-[72px_minmax(0,1fr)] gap-5 border-b border-secondary/70 py-7;
+    @apply grid grid-cols-[60px_minmax(0,1fr)] gap-4 border-b border-secondary/70 py-5;
   }
 
   .verse-number {
@@ -306,17 +306,17 @@
   }
 
   .verse-number span {
-    @apply grid h-10 w-10 place-items-center bg-contain bg-center bg-no-repeat text-sm text-black;
+    @apply grid h-8 w-8 place-items-center bg-contain bg-center bg-no-repeat text-xs text-black;
     background-image: url('/assets/png/juzComponent.png');
   }
 
   .arabic-text {
-    @apply m-0 text-right font-arabic text-4xl leading-[2.3];
+    @apply m-0 text-right font-arabic text-3xl leading-[2.1];
   }
 
   .translation-text,
   .tafsir-text {
-    @apply text-xl leading-9;
+    @apply text-base leading-8;
   }
 
   .tafsir-text {
@@ -324,24 +324,24 @@
   }
 
   .premium-card {
-    @apply mx-auto flex max-w-5xl flex-col items-center gap-7;
+    @apply mx-auto flex max-w-4xl flex-col items-center gap-5;
   }
 
   .premium-banner {
-    @apply flex h-56 w-full items-center justify-center bg-cover bg-center;
+    @apply flex h-40 w-full items-center justify-center bg-cover bg-center;
     background-image: url('/assets/flet/searchbg.png');
   }
 
   .premium-banner h1 {
-    @apply text-5xl font-semibold text-primary;
+    @apply text-4xl font-semibold text-primary;
   }
 
   .premium-copy {
-    @apply whitespace-pre-line text-center text-3xl leading-normal;
+    @apply whitespace-pre-line text-center text-xl leading-normal;
   }
 
   .premium-list {
-    @apply grid gap-3 text-xl;
+    @apply grid gap-3 text-base;
   }
 
   .premium-list li {
@@ -349,11 +349,11 @@
   }
 
   .payment-row {
-    @apply flex flex-wrap items-center justify-center gap-5 text-2xl;
+    @apply flex flex-wrap items-center justify-center gap-4 text-lg;
   }
 
   .payment-card {
-    @apply h-20 w-36 rounded-xl border border-transparent bg-white p-3;
+    @apply h-16 w-28 rounded-lg border border-transparent bg-white p-3;
   }
 
   .payment-card.active {
@@ -365,21 +365,21 @@
   }
 
   .buy-button {
-    @apply h-16 w-full max-w-md text-xl;
+    @apply h-12 w-full max-w-sm text-base;
   }
 
   .loading,
   .state-box,
   .empty-reader {
-    @apply flex min-h-40 flex-col items-center justify-center gap-4 text-xl text-hint;
+    @apply flex min-h-32 flex-col items-center justify-center gap-3 text-base text-hint;
   }
 
   .loading span {
-    @apply h-8 w-8 animate-spin rounded-full border-4 border-secondary border-t-primary;
+    @apply h-6 w-6 animate-spin rounded-full border-4 border-secondary border-t-primary;
   }
 
   .muted {
-    @apply p-5 text-hint;
+    @apply p-4 text-sm text-hint;
   }
 }
 
