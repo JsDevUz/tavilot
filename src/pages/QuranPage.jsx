@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
-import ReactMarkdown from 'react-markdown';
 import { Bookmark, BookmarkCheck, BookOpen, Layers, Search } from 'lucide-react';
 import BackButton from '../components/BackButton';
 import ErrorState from '../components/ErrorState';
 import Loading from '../components/Loading';
+import RichContent from '../components/RichContent';
 import { useAsync } from '../hooks/useAsync';
+import { useDebouncedValue } from '../hooks/useDebouncedValue';
 import { getChapter, getJuz, listChapters, listJuz, searchQuran } from '../services/quranService';
 import { useAppStore, useAuthSnapshot } from '../store/useAppStore';
 import { getTitle, getVerseNumber, getVerses } from '../utils/content';
@@ -18,6 +19,7 @@ export default function QuranPage({ search, setSearch, goHome }) {
   const [mode, setMode] = useState('chapter');
   const [selectedId, setSelectedId] = useState(1);
   const [searchType, setSearchType] = useState(1);
+  const debouncedSearch = useDebouncedValue(search.trim(), 300);
 
   const requestParams = useMemo(() => ({ lang, token }), [lang, token]);
   const chapters = useAsync(() => listChapters(requestParams), [lang, token]);
@@ -27,8 +29,8 @@ export default function QuranPage({ search, setSearch, goHome }) {
     [mode, selectedId, lang, token],
   );
   const searchResults = useAsync(
-    () => (search.trim() ? searchQuran(search.trim(), searchType, requestParams) : Promise.resolve([])),
-    [search, searchType, lang, token],
+    () => (debouncedSearch ? searchQuran(debouncedSearch, searchType, requestParams) : Promise.resolve([])),
+    [debouncedSearch, searchType, lang, token],
   );
 
   useEffect(() => {
@@ -119,7 +121,7 @@ export default function QuranPage({ search, setSearch, goHome }) {
                     {verse.text && <p className="translation-text">{verse.text}</p>}
                     {verse.description && (
                       <div className="tafsir-text">
-                        <ReactMarkdown>{verse.description}</ReactMarkdown>
+                        <RichContent>{verse.description}</RichContent>
                       </div>
                     )}
                   </div>

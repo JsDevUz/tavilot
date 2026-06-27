@@ -2,7 +2,14 @@ import { librarySections } from '../services/libraryService';
 import { useAppStore } from '../store/useAppStore';
 import { t } from '../utils/i18n';
 
-const icons = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth'];
+const cardArt = [
+  'category-moturudiy.svg',
+  'category-quran.png',
+  'category-manuscript.png',
+  'category-studies.png',
+  'category-resources.png',
+  'category-refusal.png',
+];
 
 export default function HomePage({ openLibrary, openQuran }) {
   const lang = useAppStore((state) => state.preferences.lang || 'uz');
@@ -15,12 +22,15 @@ export default function HomePage({ openLibrary, openQuran }) {
   return (
     <section className="home-page">
       <div className="home-hero">
-        <img src="/assets/png/blog_logo.png" alt="Ta'vilot Al-Quran" />
+        <img src="/assets/flet/tavilot-logo.png" alt="Ta'vilot Al-Quran" />
       </div>
       <div className="home-grid">
         {cards.map((card, index) => (
           <button className="home-card" key={card.title} onClick={card.action}>
-            <img src={`/assets/svg/${icons[index] || 'book'}.svg`} alt="" />
+            <div className="home-card-art">
+              <img className="home-card-book" src="/assets/flet/book-open.svg" alt="" />
+              <img src={`/assets/flet/${cardArt[index]}`} alt="" />
+            </div>
             <span>{card.title}</span>
           </button>
         ))}

@@ -26,7 +26,7 @@ export default function PremiumPage({ goHome }) {
           <span>{t(lang, 'chooseForSell')}</span>
           {['payme', 'click'].map((name) => (
             <button key={name} className={`payment-card ${payment === name ? 'active' : ''}`} onClick={() => setPayment(name)}>
-              <img src={`/assets/png/${name}.png`} alt={name} />
+              <img src={`/assets/flet/${name}.png`} alt={name} />
             </button>
           ))}
         </div>

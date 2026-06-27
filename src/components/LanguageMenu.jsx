@@ -4,11 +4,10 @@ import { useAppStore } from '../store/useAppStore';
 const languages = [
   { value: 'uz', label: 'Lotin' },
   { value: 'kr', label: 'Kiril' },
-  { value: 'ru', label: 'RU' },
 ];
 
 export default function LanguageMenu() {
-  const lang = useAppStore((state) => state.preferences.lang || 'uz');
+  const lang = useAppStore((state) => (state.preferences.lang === 'kr' ? 'kr' : 'uz'));
   const setLang = useAppStore((state) => state.setLang);
   return (
     <label className="language-menu">

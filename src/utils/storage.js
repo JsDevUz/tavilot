@@ -17,7 +17,8 @@ export function saveAuth(auth) {
 
 export function loadPreferences() {
   try {
-    return JSON.parse(localStorage.getItem(PREF_KEY)) || { lang: 'uz' };
+    const preferences = JSON.parse(localStorage.getItem(PREF_KEY)) || { lang: 'uz' };
+    return { ...preferences, lang: preferences.lang === 'kr' ? 'kr' : 'uz' };
   } catch {
     return { lang: 'uz' };
   }

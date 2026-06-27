@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import ReactMarkdown from 'react-markdown';
 import BackButton from '../components/BackButton';
 import ErrorState from '../components/ErrorState';
 import Loading from '../components/Loading';
+import RichContent from '../components/RichContent';
 import { useAsync } from '../hooks/useAsync';
 import { getLibraryDetail, getLibraryList } from '../services/libraryService';
 import { useAppStore, useAuthSnapshot } from '../store/useAppStore';
@@ -23,7 +23,8 @@ export default function LibraryPage({ section, goHome }) {
   );
 
   const items = getItems(list.data);
-  const active = detail.data || selected;
+  const detailItems = getItems(detail.data);
+  const active = selected ? detailItems[0] || detail.data || selected : null;
 
   return (
     <section className="library-page">
@@ -45,11 +46,11 @@ export default function LibraryPage({ section, goHome }) {
           </aside>
           <article className="library-detail">
             {detail.loading && selected && <Loading />}
-            {!selected && <div className="empty-reader">{t(lang, 'open')}</div>}
+            {!selected && !detail.loading && <div className="empty-reader">{t(lang, 'open')}</div>}
             {active && !detail.loading && (
               <>
                 <h2>{getTitle(active)}</h2>
-                <ReactMarkdown>{getDescription(active)}</ReactMarkdown>
+                <RichContent>{getDescription(active)}</RichContent>
               </>
             )}
           </article>

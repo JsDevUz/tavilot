@@ -33,7 +33,7 @@ export default function AuthPage({ mode = 'login', goHome, onRegister, onLogin }
   return (
     <section className="auth-page">
       <form className="auth-panel" onSubmit={submit}>
-        <img className="auth-logo" src="/assets/png/logo.png" alt="Tavilot" />
+        <img className="auth-logo" src="/assets/flet/tavilot-logo.png" alt="Tavilot" />
         <div>
           <h1>{mode === 'login' ? t(lang, 'hi') : t(lang, 'registerToContinue')}</h1>
           <p>{t(lang, 'enterLoginAndPassword')}</p>
